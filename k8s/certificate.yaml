@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+ 
+kind: Certificate
+metadata:
+  name: hackersandbox-com-tls
+spec:
+  secretName: hackersandbox-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: hackersandbox.com
+  dnsNames:
+    - hackersandbox.com
+    - www.hackersandbox.com
